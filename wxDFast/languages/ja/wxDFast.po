@@ -1,0 +1,1615 @@
+# translation of wxDFast.po to Hungarian
+# Erno Szabados <chromecat77@gmail.com>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: wxDFast\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-03-12 18:21+0900\n"
+"Last-Translator: Tilt <tiltstr@gmail.com>\n"
+"Language-Team: Tilt <tiltstr@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: /home/max/Projetos/wxDFast/src\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-SearchPath-0: /home/max/Projetos/wxDFast/src/wxMD5\n"
+"X-Poedit-SearchPath-1: /home/max/Projetos/wxDFast/src\n"
+"X-Poedit-SearchPath-2: /home/max/Projetos/wxDFast/resources\n"
+
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:63
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:813
+msgid "Total Speed:"
+msgstr "合計速度:"
+
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:65
+msgid "Total Complete:"
+msgstr "合計完了:"
+
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:67
+msgid "Downloads in progress:"
+msgstr "ダウンロードの進捗状況:"
+
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:84
+msgid "Hide the main window"
+msgstr "メインウィンドウを隠す"
+
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:86
+msgid "Show the main window"
+msgstr "メインウィンドウを表示"
+
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:87
+msgid "New download"
+msgstr "新規ダウンロード"
+
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:88
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2719
+msgid "Close the program"
+msgstr "プログラムを閉じる"
+
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:91
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:167
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:184
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:202
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:423
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:430
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:438
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1761
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1768
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1776
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2415
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2427
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2439
+msgid "Band control"
+msgstr "帯域コントロール"
+
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:93
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:169
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:440
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1778
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2441
+msgid "Unlimited"
+msgstr "無制限"
+
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:93
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:95
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:96
+msgid "Just for this session. To change definitely go to \"Options\""
+msgstr "このセッションの為に定義を変更する場合は、\"オプション\"から変更して下さい"
+
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:94
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:186
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:432
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1770
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2429
+msgid "Active"
+msgstr "アクティブ"
+
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:96
+#: /home/max/Projetos/wxDFast/src/TaskBarIcon.cpp:204
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:425
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1763
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2417
+msgid "Per Download"
+msgstr "ダウンロード毎"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:144
+msgid "Downloads in Progress"
+msgstr "ダウンロードの進捗"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:145
+msgid "Finished Downloads"
+msgstr "完了したダウンロード"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:345
+#: /tmp/dummy:25
+msgid "Schedule Download"
+msgstr "スケジュールダウンロード"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:346
+#: /tmp/dummy:26
+#: /tmp/dummy:89
+msgid "Start Download"
+msgstr "ダウンロードの実行"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:347
+#: /tmp/dummy:27
+msgid "Stop Download"
+msgstr "ダウンロード停止"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:348
+#: /tmp/dummy:24
+msgid "Remove Download"
+msgstr "ダウンロードを削除"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:349
+msgid "Properties of Download"
+msgstr "ダウンロードのプロパティ"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:350
+#: /tmp/dummy:60
+msgid "Download File Again"
+msgstr "ファイルを再度ダウンロードする"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:351
+#: /tmp/dummy:57
+msgid "Move File"
+msgstr "ファイルを移動"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:352
+#: /tmp/dummy:58
+msgid "Check Integrity"
+msgstr "整合性をチェック"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:353
+#: /tmp/dummy:33
+msgid "Copy URL"
+msgstr "URLをコピー"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:354
+#: /tmp/dummy:34
+msgid "Copy Download Data"
+msgstr "ダウンロードデータをコピー"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:355
+#: /tmp/dummy:59
+msgid "Open Destination Directory"
+msgstr "保存フォルダを開く"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:416
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1754
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2862
+msgid "NEW RELEASE: "
+msgstr "NEW RELEASE: "
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:418
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1756
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2864
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2866
+msgid " is available."
+msgstr "利用可能."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:447
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:610
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1394
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1733
+#: /home/max/Projetos/wxDFast/src/InProgressList.cpp:129
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:143
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:284
+#: /tmp/dummy:100
+msgid "File type"
+msgstr "ファイルの種類"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:450
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1736
+#: /tmp/dummy:101
+msgid "Preview"
+msgstr "プレビュー"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:624
+msgid "Piece "
+msgstr "断片"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1001
+msgid "Stopping the download..."
+msgstr "ダウンロードを停止..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1001
+msgid "Stopping the current download before removing..."
+msgstr "削除する前に現在のダウンロードを停止..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1013
+msgid "Do you also want to remove the partial downloaded file from the disk?"
+msgstr "本当にこのアイテムをリストとディスクから削除しますか?"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1013
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1051
+msgid "Remove..."
+msgstr "削除..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1051
+msgid "Do you also want to remove downloaded file(s) from the disk?"
+msgstr "本当にこのアイテムをリストとディスクから削除しますか?"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1168
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2846
+msgid "Error creating thread!"
+msgstr "スレッド作成エラー!"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1168
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1176
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1341
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1453
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2074
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2141
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2147
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2167
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2205
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2525
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2536
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2547
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2758
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2908
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2911
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2914
+#: /home/max/Projetos/wxDFast/src/BoxFind.cpp:45
+#: /home/max/Projetos/wxDFast/src/wxDFast.cpp:338
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:46
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:61
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:79
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:91
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:113
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:126
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:163
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:195
+msgid "Error..."
+msgstr "エラー..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1176
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2852
+msgid "Error starting thread!"
+msgstr "スレッド開始エラー!"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1215
+msgid "Starting the downloads..."
+msgstr "このダウンロードを開始..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1232
+msgid "Stopping the downloads..."
+msgstr "このダウンロードを停止..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1341
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1453
+msgid "Unable to open the clipboard!"
+msgstr "クリップボードを開けません!"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1389
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:142
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:283
+msgid "Name"
+msgstr "名前"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1399
+#: /home/max/Projetos/wxDFast/src/InProgressList.cpp:252
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:144
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:271
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:285
+msgid "Size"
+msgstr "サイズ"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1404
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:145
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:286
+msgid "Time"
+msgstr "時間"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1409
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:146
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:287
+msgid "Destination"
+msgstr "保存先"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1416
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:149
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:290
+msgid "MD5"
+msgstr "MD5"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1422
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:150
+#: /tmp/dummy:94
+#: /tmp/dummy:95
+msgid "Reference URL"
+msgstr "参照アドレス"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1427
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:151
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:291
+#: /tmp/dummy:93
+msgid "Comments"
+msgstr "コメント"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1432
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:152
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:292
+msgid "URLs"
+msgstr "URL"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1534
+msgid "Find file..."
+msgstr "ファイルを検索..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:1863
+#: /tmp/dummy:56
+msgid "Download Properties"
+msgstr "ダウンロードのプロパティ"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2030
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2160
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:141
+#: /home/max/Projetos/wxDFast/src/BoxOptions.cpp:55
+#: /home/max/Projetos/wxDFast/src/BoxOptions.cpp:77
+msgid "Select the directory:"
+msgstr "ディレクトリを選択:"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2065
+msgid "Moving..."
+msgstr "移動しています..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2065
+msgid "Moving file..."
+msgstr "ファイルを移動中..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2074
+msgid "Error moving file."
+msgstr "ファイルの移動エラー."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2080
+msgid ""
+"The file isn't in the path that it was saved initially.\n"
+"Do you want to change only the old path for the current one?"
+msgstr ""
+"保存されたパスにファイルがありません.\n"
+"古いパスを一時的に変更しますか?"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2083
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2751
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:108
+msgid "Continue..."
+msgstr "続行..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2127
+msgid "Checking file's MD5..."
+msgstr "ファイルのMD5値をチェック..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2134
+msgid "The file was verified successfully."
+msgstr "このファイルのベリファイは成功しました"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2134
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2165
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2200
+msgid "Success..."
+msgstr "成功..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2138
+msgid "The MD5 calculated previously is different from the current one."
+msgstr "現在のMD5値は以前のものと異なっています"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2139
+msgid ""
+"\n"
+"Old MD5 =\t\t"
+msgstr ""
+"\n"
+"旧 MD5 =\t\t"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2140
+msgid ""
+"\n"
+"Current MD5 =\t"
+msgstr ""
+"\n"
+"現在の MD5 =\t"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2147
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2914
+#: /home/max/Projetos/wxDFast/src/BoxFind.cpp:107
+msgid "File not found."
+msgstr "ファイルがみつかりません"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2165
+msgid "The configuration was exported successfully."
+msgstr "設定のエクスポートに成功しました"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2167
+msgid "Error exporting configuration."
+msgstr "設定のエクスポート・エラー"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2194
+msgid "Select the file..."
+msgstr "ファイルを選択..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2200
+msgid ""
+"The configuration was imported successfully.\n"
+"The program will be restated now for the changes to take effect."
+msgstr ""
+"設定のインポートに成功しました.\n"
+"効果を反映させる為に一度プラグラムを再起動する必要があります."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2205
+msgid "Error importing configuration."
+msgstr "設定のインポート・エラー"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2235
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2246
+msgid "Command :\t"
+msgstr "コマンド:\t"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2235
+msgid "Shutdown Command..."
+msgstr "シャットダウンコマンド..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2246
+msgid "Disconnect Command..."
+msgstr "接続の切断コマンド..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2328
+msgid "Updating the configuration..."
+msgstr "設定を更新します..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2328
+msgid "Updating and saving the configuration..."
+msgstr "設定を更新して保存..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2524
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2535
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2546
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2757
+msgid ""
+"Unable to find the browser.\n"
+"Go to \"Options\" and specify a valid one."
+msgstr ""
+"ブラウザが見つかりません.\n"
+"\"\"オプション\"から定義し直して下さい"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2556
+msgid "Version: "
+msgstr "バージョン:"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2557
+msgid "Author: "
+msgstr "作者:"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2559
+msgid "I'd like to thank the following contributors for their help:\n"
+msgstr "貢献して頂いた以下の方々に感謝します:\n"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2561
+msgid " - several tips and donations\n"
+msgstr " - several tips and donations\n"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2563
+msgid ""
+" - Ripstop theme\n"
+"\n"
+msgstr ""
+" - Ripstop theme\n"
+"\n"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2564
+msgid "Visit our website:\n"
+msgstr "ウェブサイトに訪問:\n"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2567
+msgid "Help to improve the program!\n"
+msgstr "プログラムの改良に協力して下さい!\n"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2568
+msgid "Donate to this project!"
+msgstr "このプロジェクトに寄付する!"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2589
+msgid "Do you want to close the program?"
+msgstr "本当にプログラムを閉じますか?"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2589
+msgid "Close..."
+msgstr "閉じる..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2679
+#: /tmp/dummy:3
+#: /tmp/dummy:73
+msgid "Add new download"
+msgstr "新規ダウンロードに追加"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2683
+#: /tmp/dummy:5
+msgid "Remove the selected download"
+msgstr "選択したダウンロードを削除"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2687
+#: /tmp/dummy:7
+msgid "Mark the selected download as scheduled"
+msgstr "選択されたダウンロードをスケジュールとしてマーク"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2691
+#: /tmp/dummy:9
+msgid "Start the selected download"
+msgstr "選択されたダウンロードを開始"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2695
+#: /tmp/dummy:11
+msgid "Stop the selected download"
+msgstr "選択されたダウンロードを停止"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2699
+#: /tmp/dummy:13
+#: /tmp/dummy:28
+msgid "Start all downloads"
+msgstr "すべてのダウンロードを開始"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2703
+#: /tmp/dummy:15
+#: /tmp/dummy:29
+msgid "Stop all downloads"
+msgstr "すべてのダウンロードを停止"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2707
+msgid "Raise in one level the selected download in the queue"
+msgstr "選択されたダウンロードのキューレベルをひとつ上げる"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2711
+msgid "Lower in one level the selected download in the queue"
+msgstr "選択されたダウンロードのキューレベルをひとつ下げる"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2715
+#: /tmp/dummy:21
+msgid "Show the properties of the selected download"
+msgstr "選択されたダウンロードのプロパティを表示"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2750
+msgid ""
+"You have downloaded a HTML file.\n"
+"Open this file in your browser?"
+msgstr ""
+"HTML ファイルがダウンロードされました.\n"
+"ファイルをブラウザで開きますか?"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2767
+msgid "Shutting down the computer..."
+msgstr "PCをシャットダウンします..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2767
+msgid "The computer will shut down in seconds..."
+msgstr "PCをシャットダウンするまで(秒)..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2779
+msgid "Disconnecting from the Internet..."
+msgstr "インターネット接続を切断..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2779
+msgid "The Internet connection will be closed in seconds..."
+msgstr "インターネット接続を閉じるまで(秒)..."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2866
+msgid "Visit http://dfast.sourceforge.net for more informations."
+msgstr "Visit http://dfast.sourceforge.net for more informations."
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2904
+msgid "List of files in Zip archive:"
+msgstr "ZIPアーカイブの内容を一覧:"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2904
+msgid "Zip Preview"
+msgstr "ZIPプレビュー"
+
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2908
+#: /home/max/Projetos/wxDFast/src/MainFrame.cpp:2911
+msgid "Unable to extract zip file content!"
+msgstr "ZIPファイルの内容を抽出できません!"
+
+#: /home/max/Projetos/wxDFast/src/BoxFind.cpp:45
+msgid ""
+"Unable to search in this page.\n"
+"Change to another page and try again"
+msgstr ""
+"このページからは検索できません.\n"
+"他のページに変更して再試行してください"
+
+#: /home/max/Projetos/wxDFast/src/BoxFind.cpp:107
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:99
+msgid "Information..."
+msgstr "インフォメーション..."
+
+#: /home/max/Projetos/wxDFast/src/wxDFast.cpp:327
+msgid "Cannot set locale to"
+msgstr "ロケールの設定ができません"
+
+#: /home/max/Projetos/wxDFast/src/wxDFast.cpp:329
+msgid "This language is not supported by your system."
+msgstr "この言語は、あなたのシステムではサポートされません"
+
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:46
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:79
+msgid "The following URL is invalid:\n"
+msgstr "以下のURLは無効です:\n"
+
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:61
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:163
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:195
+msgid "The URL is invalid!"
+msgstr "このURLは無効です!"
+
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:91
+msgid "The following URL has a different filename:\n"
+msgstr "以下のURLに異なるファイル名が含まれています:\n"
+
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:99
+msgid "Select at least one item of the address list!\n"
+msgstr "アドレスリストのアイテムを最低ひとつは選択して下さい!\n"
+
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:108
+msgid ""
+"The destination directory does not exist!\n"
+"Do you want to create it?"
+msgstr ""
+"この対象ディレクトリは存在しません!\n"
+"作成しますか?"
+
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:113
+msgid "You don't have permission to create the directory!"
+msgstr "あなたには、ディレクトリを作成する権限がありません!"
+
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:126
+msgid "I can't split the file into so many pieces!"
+msgstr "ファイルをこれ以上の断片に分割できません!"
+
+#: /home/max/Projetos/wxDFast/src/BoxNew.cpp:177
+msgid "Edit the URL"
+msgstr "URLを編集"
+
+#: /home/max/Projetos/wxDFast/src/InProgressList.cpp:35
+msgid "Double-click on the item to Start/Stop the download"
+msgstr "ダブルクリックでアイテムのダウンロードを 開始/停止"
+
+#: /home/max/Projetos/wxDFast/src/InProgressList.cpp:208
+msgid "   [ Yes ]"
+msgstr "   [ はい ]"
+
+#: /home/max/Projetos/wxDFast/src/InProgressList.cpp:210
+msgid "   [ No  ]"
+msgstr "   [ いいえ ]"
+
+#: /home/max/Projetos/wxDFast/src/InProgressList.cpp:246
+msgid "Restart"
+msgstr "リジューム"
+
+#: /home/max/Projetos/wxDFast/src/InProgressList.cpp:249
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:269
+msgid "Filename"
+msgstr "ファイル名"
+
+#: /home/max/Projetos/wxDFast/src/InProgressList.cpp:255
+msgid "Completed"
+msgstr "完了済"
+
+#: /home/max/Projetos/wxDFast/src/InProgressList.cpp:258
+msgid "Percentage"
+msgstr "パーセント"
+
+#: /home/max/Projetos/wxDFast/src/InProgressList.cpp:261
+msgid "Time Passed"
+msgstr "経過時間"
+
+#: /home/max/Projetos/wxDFast/src/InProgressList.cpp:264
+msgid "Remaining"
+msgstr "残り"
+
+#: /home/max/Projetos/wxDFast/src/InProgressList.cpp:267
+msgid "Speed"
+msgstr "速度"
+
+#: /home/max/Projetos/wxDFast/src/InProgressList.cpp:270
+msgid "Attempts"
+msgstr "リトライ"
+
+#: /home/max/Projetos/wxDFast/src/InProgressList.cpp:273
+msgid "URL"
+msgstr "URL"
+
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:39
+msgid "Double-click on the item to open the destination directory"
+msgstr "ダブルクリックでファイル保存フォルダを開きます"
+
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:147
+#: /tmp/dummy:8
+msgid "Start"
+msgstr "開始日時"
+
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:148
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:273
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:289
+msgid "Finished"
+msgstr "完了日時"
+
+#: /home/max/Projetos/wxDFast/src/FinishedList.cpp:288
+msgid "Started"
+msgstr "開始"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:67
+msgid ""
+"You have downloaded a HTML file.\n"
+"Opening this file in your browser.\n"
+msgstr ""
+"HTML ファイルがダウンロードされました.\n"
+"このファイルをブラウザで開きますか.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:193
+msgid "This protocol isn't supported.\n"
+msgstr "このプロトコルはサポートされません.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:247
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:915
+msgid "Redirecting to "
+msgstr "リダイレクト"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:265
+msgid "Metalink file detected\n"
+msgstr "メタリンクファイルを検出\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:266
+msgid "Getting Metalink data...\n"
+msgstr "メタリンクからデータを取得...\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:296
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:715
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:962
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1138
+#: /tmp/dummy:176
+msgid "Not available"
+msgstr "利用出来ません"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:317
+msgid "This Metalink file contains multiples files.\n"
+msgstr "このメタ･ファイルには複数のファイルが含まれています.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:320
+msgid "Creating all downloads...\n"
+msgstr "このダウンロードを開始...\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:330
+msgid "Getting file number "
+msgstr "ファイル数を取得"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:336
+msgid "Error retrieving Metalink data\n"
+msgstr "メタリンクデータの取得エラー\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:355
+msgid "New attempt in "
+msgstr "新規リトライ"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:355
+msgid " seconds\n"
+msgstr " 秒\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:369
+msgid "Attempt "
+msgstr "リトライ"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:369
+msgid " of "
+msgstr " of "
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:390
+msgid "Canceled.\n"
+msgstr "キャンセル. \n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:412
+msgid "Critical error!! The start point is bigger that the end point!!\n"
+msgstr "重大なエラー!! スタート位置が終了位置より大きくなっています!!\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:434
+msgid "Error establishing input stream.\n"
+msgstr "ストリーム入力エラー.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:449
+msgid "Copying file...\n"
+msgstr "ファイルをコピー中...\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:454
+msgid "Error opening file "
+msgstr "ファイルのオープンに失敗"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:548
+msgid "Error copying file.\n"
+msgstr "ファイルのコピーエラー.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:568
+msgid "Error writing file.\n"
+msgstr "ファイル書き込みエラー.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:639
+msgid "Finished this piece\n"
+msgstr "完了した断片\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:657
+msgid "Waiting for the other pieces...\n"
+msgstr "他の断片を待機中...\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:665
+msgid "Putting all the pieces together...\n"
+msgstr "すべての断片をまとめています...\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:669
+msgid ""
+"Error joining the pieces.\n"
+"Try to restart the download.\n"
+msgstr ""
+"断片の結合エラー.\n"
+"ダウンロードを再試行してください.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:675
+msgid "Checking MD5...\n"
+msgstr "MD5をチェック中...\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:676
+msgid "Checking MD5 ... ("
+msgstr "MD5をチェック中.. ("
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:684
+msgid "Comparing expected and calculated MD5...\n"
+msgstr "予期されるMD5値を使用して比較...\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:687
+msgid "File verified successfully\n"
+msgstr "ファイルのベリファイに成功しました\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:688
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:698
+msgid "Finished\n"
+msgstr "完了\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:692
+msgid "Error comparing MD5.\n"
+msgstr "MD5値の比較エラー.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:724
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:975
+msgid "Resolving host '"
+msgstr "ホストの名前解決"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:727
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:978
+msgid ""
+"\n"
+"Host not found.\n"
+msgstr ""
+"\n"
+"ホストがみつかりません.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:733
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:984
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:999
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1023
+msgid " OK\n"
+msgstr " OK\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:737
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:988
+msgid "Trying to connect in '"
+msgstr "接続を試行: "
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:742
+msgid "Connection denied.\n"
+msgstr "接続の拒否.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:753
+msgid ""
+"Accessing server...\n"
+"\n"
+msgstr ""
+"サーバにアクセスします...\n"
+"\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:853
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1104
+msgid ""
+"The file size has changed since the last time.\n"
+"Removing the partially downloaded files...\n"
+msgstr ""
+"最終更新時からファイルサイズが変更されています.\n"
+"ダウンロード済みの断片ファイルを削除します...\n"
+"\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:885
+msgid "This server does not support restart.\n"
+msgstr "このサーバーはリジュームに対応していません.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:898
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:905
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1072
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1160
+msgid "Unable to return the file size.\n"
+msgstr "ファイルサイズをリターンできません.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:929
+msgid "Error requesting file.\n"
+msgstr "ファイルリクエストエラー.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:937
+msgid "The server timed out.\n"
+msgstr "サーバーのタイムアウト.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:993
+msgid ""
+"\n"
+"Connection denied.\n"
+msgstr ""
+"\n"
+"接続の拒否.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1003
+msgid "Waiting for welcome message.\n"
+msgstr "メッセージを待機しています.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1008
+msgid "Verifying if the server supports restarting..."
+msgstr "サーバーがリジュームに対応している場合はベリファイする..."
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1011
+msgid ""
+"\n"
+"This server does not support restart.\n"
+msgstr ""
+"\n"
+"このサーバーはリジュームに対応していません.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1030
+msgid "Changing to directory "
+msgstr "ディレクトリを変更"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1033
+msgid "Invalid directory.\n"
+msgstr "無効なディレクトリ.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1042
+msgid "Changing to binary mode...\n"
+msgstr "バイナリモードに変更中...\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1045
+msgid "Unable to change to binary mode.\n"
+msgstr "バイナリモードに変更できません.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1054
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1157
+msgid "Verifying the size of the "
+msgstr "サイズのベリファイ"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1080
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1177
+msgid "File size: "
+msgstr "ファイルサイズ:"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1125
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1185
+msgid "Requesting file...\n"
+msgstr "ファイルのリクエスト...\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1149
+msgid "Looking for file "
+msgstr "ファイルを探す"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1152
+msgid "File not found.\n"
+msgstr "ファイルがみつかりません.\n"
+
+#: /home/max/Projetos/wxDFast/src/DownloadThread.cpp:1258
+msgid "There isn't enough disk space to join the file parts.\n"
+msgstr "ファイルの断片を結合するには、ディスク容量が足りません.\n"
+
+#: /home/max/Projetos/wxDFast/src/BoxOptions.cpp:62
+#: /home/max/Projetos/wxDFast/src/BoxOptions.cpp:69
+msgid "Choose a file..."
+msgstr "ファイルを選択..."
+
+#: /home/max/Projetos/wxDFast/src/BoxOptions.cpp:135
+#: /home/max/Projetos/wxDFast/src/BoxOptions.cpp:142
+msgid "Select the date..."
+msgstr "日時を選択..."
+
+#: /home/max/Projetos/wxDFast/src/BoxOptions.cpp:158
+msgid "Remove some items before adding a new one."
+msgstr "新規追加する前に同じアイテムを削除"
+
+#: /home/max/Projetos/wxDFast/src/wxDFast.h:239
+msgid "Sundays"
+msgstr "日曜日"
+
+#: /home/max/Projetos/wxDFast/src/wxDFast.h:239
+msgid "Mondays"
+msgstr "月曜日"
+
+#: /home/max/Projetos/wxDFast/src/wxDFast.h:239
+msgid "Tuesdays"
+msgstr "火曜日"
+
+#: /home/max/Projetos/wxDFast/src/wxDFast.h:240
+msgid "Wednesdays"
+msgstr "水曜日"
+
+#: /home/max/Projetos/wxDFast/src/wxDFast.h:240
+msgid "Thursdays"
+msgstr "木曜日"
+
+#: /home/max/Projetos/wxDFast/src/wxDFast.h:240
+msgid "Fridays"
+msgstr "金曜日"
+
+#: /home/max/Projetos/wxDFast/src/wxDFast.h:241
+msgid "Saturdays"
+msgstr "土曜日"
+
+#: /home/max/Projetos/wxDFast/src/wxDFast.h:745
+msgid "OK"
+msgstr "OK"
+
+#: /tmp/dummy:1
+msgid "About..."
+msgstr "プログラムについて..."
+
+#: /tmp/dummy:2
+msgid "New"
+msgstr "新規"
+
+#: /tmp/dummy:4
+#: /tmp/dummy:165
+msgid "Remove"
+msgstr "削除"
+
+#: /tmp/dummy:6
+#: /tmp/dummy:92
+msgid "Schedule"
+msgstr "スケジュール"
+
+#: /tmp/dummy:10
+msgid "Stop"
+msgstr "停止"
+
+#: /tmp/dummy:12
+msgid "Start All"
+msgstr "すべて開始"
+
+#: /tmp/dummy:14
+msgid "Stop All"
+msgstr "すべて停止"
+
+#: /tmp/dummy:16
+msgid "Up"
+msgstr "上に移動"
+
+#: /tmp/dummy:17
+msgid "Push download higher up the queue"
+msgstr "ウンロードのキューレベルをひとつ上げる"
+
+#: /tmp/dummy:18
+msgid "Down"
+msgstr "下に移動"
+
+#: /tmp/dummy:19
+msgid "Push download lower down the queue"
+msgstr "ダウンロードのキューレベルをひとつ下げる"
+
+#: /tmp/dummy:20
+msgid "Properties"
+msgstr "プロパティ"
+
+#: /tmp/dummy:22
+msgid "&File"
+msgstr "ファイル(&F)"
+
+#: /tmp/dummy:23
+msgid "New Download"
+msgstr "新規ダウンロード"
+
+#: /tmp/dummy:30
+msgid "Exit"
+msgstr "終了"
+
+#: /tmp/dummy:31
+#: /tmp/dummy:81
+msgid "&Edit"
+msgstr "編集(&E)"
+
+#: /tmp/dummy:32
+msgid "Paste URL"
+msgstr "URLを貼り付け"
+
+#: /tmp/dummy:35
+msgid "Select All"
+msgstr "すべて選択"
+
+#: /tmp/dummy:36
+msgid "Invert Selection"
+msgstr "選択を反転"
+
+#: /tmp/dummy:37
+msgid "Find Download"
+msgstr "ダウンロードを検索"
+
+#: /tmp/dummy:38
+msgid "&View"
+msgstr "表示(&V)"
+
+#: /tmp/dummy:39
+msgid "Show/Hide Graph"
+msgstr "グラフの表示/非表示"
+
+#: /tmp/dummy:40
+msgid "Show/Hide Progress Bar"
+msgstr "進捗バーの表示/非表示"
+
+#: /tmp/dummy:41
+msgid "Show/Hide Details"
+msgstr "詳細の表示/非表示"
+
+#: /tmp/dummy:42
+msgid "Language"
+msgstr "使用言語"
+
+#: /tmp/dummy:43
+msgid "(Default)"
+msgstr "(デフォルト)"
+
+#: /tmp/dummy:44
+msgid "English"
+msgstr "English"
+
+#: /tmp/dummy:45
+msgid "Portuguese"
+msgstr "Portuguese"
+
+#: /tmp/dummy:46
+msgid "Portuguese(Brazil)"
+msgstr "Portuguese(Brazil)"
+
+#: /tmp/dummy:47
+msgid "German"
+msgstr "German"
+
+#: /tmp/dummy:48
+msgid "Spanish"
+msgstr "Spanish"
+
+#: /tmp/dummy:49
+msgid "Czech"
+msgstr "Czech"
+
+#: /tmp/dummy:50
+msgid "Russian"
+msgstr "Russian"
+
+#: /tmp/dummy:51
+msgid "Hungarian"
+msgstr "Hungarian"
+
+#: /tmp/dummy:52
+msgid "Indonesian"
+msgstr "Indonesian"
+
+#: /tmp/dummy:53
+msgid "Armenian"
+msgstr "Armenian"
+
+#: /tmp/dummy:54
+msgid "Polish"
+msgstr "Polish"
+
+#: /tmp/dummy:55
+msgid "&Tools"
+msgstr "ツール(&T)"
+
+#: /tmp/dummy:61
+msgid "Export Configuration"
+msgstr "設定をエクスポート"
+
+#: /tmp/dummy:62
+msgid "Import Configuration"
+msgstr "設定をインポート"
+
+#: /tmp/dummy:63
+msgid "Shutdown when finished"
+msgstr "完了後にシステムをシャットダウン"
+
+#: /tmp/dummy:64
+#: /tmp/dummy:66
+msgid "This option is only valid in this session of the program"
+msgstr "オプションはこのプログラムのセッション時のみ有効です"
+
+#: /tmp/dummy:65
+msgid "Disconnect when finished"
+msgstr "完了後に接続を切断"
+
+#: /tmp/dummy:67
+#: /tmp/dummy:102
+msgid "Options"
+msgstr "オプション"
+
+#: /tmp/dummy:68
+msgid "&Help"
+msgstr "ヘルプ(&H)"
+
+#: /tmp/dummy:69
+msgid "wxDownload Fast Site"
+msgstr "wxDownload Fast のサイト"
+
+#: /tmp/dummy:70
+msgid "Report Bugs..."
+msgstr "バグを報告..."
+
+#: /tmp/dummy:71
+msgid "Donate..."
+msgstr "寄付する..."
+
+#: /tmp/dummy:72
+msgid "About"
+msgstr "プログラムについて"
+
+#: /tmp/dummy:74
+msgid "Save to:"
+msgstr "保存先:"
+
+#: /tmp/dummy:75
+msgid "Directory"
+msgstr "ディレクトリ"
+
+#: /tmp/dummy:76
+msgid "Address:"
+msgstr "アドレス:"
+
+#: /tmp/dummy:77
+msgid ""
+"URL to download\n"
+"Example: http://www.foo.com/foo.exe\n"
+"Example: http://www.foo.com:80/foo.exe\n"
+"Example: ftp://ftp.foo.com:21/foo.exe"
+msgstr ""
+"URL to download\n"
+"Example: http://www.foo.com/foo.exe\n"
+"Example: http://www.foo.com:80/foo.exe\n"
+"Example: ftp://ftp.foo.com:21/foo.exe"
+
+#: /tmp/dummy:78
+#: /tmp/dummy:163
+msgid "Add"
+msgstr "追加"
+
+#: /tmp/dummy:79
+msgid "Address List:"
+msgstr "アドレスリスト:"
+
+#: /tmp/dummy:80
+msgid "Only the selected addresses will be downloaded"
+msgstr "選択されたアドレスからのみダウンロード"
+
+#: /tmp/dummy:82
+msgid "Server Permission"
+msgstr "サーバーのパーミッション"
+
+#: /tmp/dummy:83
+msgid "User:"
+msgstr "ユーザー:"
+
+#: /tmp/dummy:84
+msgid "Password:"
+msgstr "パスワード:"
+
+#: /tmp/dummy:85
+msgid "Segmented download"
+msgstr "ダウンロードされた断片"
+
+#: /tmp/dummy:86
+msgid ""
+"Split download into how many\n"
+"pieces?"
+msgstr "ダウンロードファイルの分割数"
+
+#: /tmp/dummy:87
+msgid "Download bandwidth (in kB/s)"
+msgstr "ダウンロードの帯域幅 (Kb/s)"
+
+#: /tmp/dummy:88
+msgid ""
+"Set band width limit for this download.\n"
+"Set \"0\" to unlimited."
+msgstr ""
+"このダウンロードに利用する帯域幅を設定して下さい.\n"
+"\"0\"で無制限です"
+
+#: /tmp/dummy:90
+msgid "Manual"
+msgstr "手動"
+
+#: /tmp/dummy:91
+msgid "Now"
+msgstr "すぐに開始"
+
+#: /tmp/dummy:96
+#: /tmp/dummy:97
+msgid "Execute the following command after download completes"
+msgstr "ダウンロード完了後に以下のコマンドを実行"
+
+#: /tmp/dummy:98
+msgid "&OK"
+msgstr "&OK"
+
+#: /tmp/dummy:99
+#: /tmp/dummy:178
+msgid "&Cancel"
+msgstr "キャンセル(&C)"
+
+#: /tmp/dummy:103
+msgid "General"
+msgstr "一般"
+
+#: /tmp/dummy:104
+msgid "Attempts:"
+msgstr "リトライ:"
+
+#: /tmp/dummy:105
+msgid "Number of attempts"
+msgstr "リトライ回数"
+
+#: /tmp/dummy:106
+msgid "Time between the attempts in seconds:"
+msgstr "リトライするまでの間隔(秒):"
+
+#: /tmp/dummy:107
+msgid "Number of simultaneous downloads:"
+msgstr "同時ダウンロード数:"
+
+#: /tmp/dummy:108
+msgid "Remember the last settings on the New Download box"
+msgstr "新規ダウンロード時に前回の設定を引き継ぐ"
+
+#: /tmp/dummy:109
+msgid "Shutdown when all downloads finish"
+msgstr "ダウンロード完了後は常にシステムをシャットダウン"
+
+#: /tmp/dummy:110
+msgid "Disconnect when all downloads finish"
+msgstr "ダウンロード完了後は常に接続を切断"
+
+#: /tmp/dummy:111
+msgid "Show dialog box when program closes"
+msgstr "プログラムを閉じるときにダイアログを表示"
+
+#: /tmp/dummy:112
+msgid "Refresh rate of the download list (millisecs):"
+msgstr "ダウンロードリストの更新間隔 (ミリ秒):"
+
+#: /tmp/dummy:113
+msgid "Download Read Buffer size(in Bytes):"
+msgstr "ダウンロードの読み込みバッファサイズ(バイト):"
+
+#: /tmp/dummy:114
+msgid "Restore the main window when all downloads finish"
+msgstr "すべてのダウンロード完了後にメインウィンドウを復元"
+
+#: /tmp/dummy:115
+msgid "Hide the main window when you start a download"
+msgstr "ダウンロード開始時にメインウィンドウを隠す"
+
+#: /tmp/dummy:116
+msgid "Check for updates automatically"
+msgstr "アップデートを自動的にチェック"
+
+#: /tmp/dummy:117
+msgid "Paths"
+msgstr "パス"
+
+#: /tmp/dummy:118
+msgid "Default destination:"
+msgstr "デフォルトの保存先:"
+
+#: /tmp/dummy:119
+#: /tmp/dummy:121
+#: /tmp/dummy:123
+msgid "..."
+msgstr "..."
+
+#: /tmp/dummy:120
+msgid "Browser path:"
+msgstr "ブラウザのパス:"
+
+#: /tmp/dummy:122
+msgid "File manager path:"
+msgstr "ファイラーのパス:"
+
+#: /tmp/dummy:124
+msgid "Shutdown command:"
+msgstr "シャットダウンコマンド:"
+
+#: /tmp/dummy:125
+msgid "Disconnect command:"
+msgstr "接続切断コマンド:"
+
+#: /tmp/dummy:126
+msgid "Partial Temporary Files Path"
+msgstr "一時ファイルのパス"
+
+#: /tmp/dummy:127
+msgid "Use the destination directory"
+msgstr "対象ディレクトリを使用"
+
+#: /tmp/dummy:128
+msgid "Proxy"
+msgstr "プロキシ"
+
+#: /tmp/dummy:129
+msgid "Use a Proxy Server"
+msgstr "プロキシサーバーを使用"
+
+#: /tmp/dummy:135
+msgid "Proxy Server"
+msgstr "プロキシサーバー"
+
+#: /tmp/dummy:136
+msgid "Server:"
+msgstr "サーバー"
+
+#: /tmp/dummy:137
+msgid "Port:"
+msgstr "ポート"
+
+#: /tmp/dummy:138
+msgid "Proxy Server Authorization"
+msgstr "プロキシサーバーの認証"
+
+#: /tmp/dummy:139
+msgid "Graph"
+msgstr "グラフ"
+
+#: /tmp/dummy:140
+msgid "Show Graph"
+msgstr "グラフを表示"
+
+#: /tmp/dummy:141
+msgid "Save how many points to graph?"
+msgstr "グラフの位置を保存しますか?"
+
+#: /tmp/dummy:142
+msgid "Graph refresh rate (millisecs):"
+msgstr "グラフの更新間隔 (ミリ秒):"
+
+#: /tmp/dummy:143
+msgid "Graph maximum value (kB/s):"
+msgstr "グラフの最大値 (kb/s):"
+
+#: /tmp/dummy:144
+msgid "The text area Width (pixels):"
+msgstr "テキスト領域の幅 (pixels):"
+
+#: /tmp/dummy:145
+msgid "Graph height:"
+msgstr "グラフの高さ:"
+
+#: /tmp/dummy:146
+msgid "Text font size (points):"
+msgstr "テキストフォントサイズ(points):"
+
+#: /tmp/dummy:147
+msgid "Main line width:"
+msgstr "ラインの幅:"
+
+#: /tmp/dummy:148
+msgid "Background colour:"
+msgstr "背景色:"
+
+#: /tmp/dummy:149
+msgid "Graph grid colour:"
+msgstr "グラフのグリッド色:"
+
+#: /tmp/dummy:150
+msgid "Main line colour:"
+msgstr "ラインの色:"
+
+#: /tmp/dummy:151
+msgid "Speed font colour:"
+msgstr "速度フォント色:"
+
+#: /tmp/dummy:152
+msgid "Scheduling"
+msgstr "スケジュール"
+
+#: /tmp/dummy:153
+msgid "Activate scheduling"
+msgstr "スケジュールを有効化"
+
+#: /tmp/dummy:154
+msgid "Start Date:"
+msgstr "開始日付:"
+
+#: /tmp/dummy:155
+msgid "Start Time:"
+msgstr "開始時間:"
+
+#: /tmp/dummy:156
+msgid "hours"
+msgstr "時"
+
+#: /tmp/dummy:157
+msgid "minutes"
+msgstr "分"
+
+#: /tmp/dummy:158
+msgid "Finish Date:"
+msgstr "完了日付:"
+
+#: /tmp/dummy:159
+msgid "Finish Time:"
+msgstr "完了時間:"
+
+#: /tmp/dummy:160
+msgid "Deactivate downloads on:"
+msgstr "ダウンロードを無効化:"
+
+#: /tmp/dummy:161
+msgid "Between"
+msgstr "間"
+
+#: /tmp/dummy:162
+msgid ":"
+msgstr ":"
+
+#: /tmp/dummy:163
+msgid "and"
+msgstr "and"
+
+#: /tmp/dummy:164
+msgid "Exceptions List:"
+msgstr "除外リスト:"
+
+#: /tmp/dummy:166
+msgid "Bandwidth"
+msgstr "帯域幅"
+
+#: /tmp/dummy:167
+msgid "Bandwidth Control"
+msgstr "帯域幅のコントロール"
+
+#: /tmp/dummy:168
+msgid "Unlimited bandwidth"
+msgstr "帯域幅を無制限"
+
+#: /tmp/dummy:169
+msgid "Limit band width independently for each download"
+msgstr "ダウンロードごとに独立した帯域幅を割り当てる"
+
+#: /tmp/dummy:170
+msgid "Limit band width for the program (in kB/s):"
+msgstr "プログラムで使用する帯域幅 (Kb/s):"
+
+#: /tmp/dummy:171
+msgid "Band width limit in kB/s to be used by the program"
+msgstr "このプログラムに最大の帯域幅(Kb/s)を割り当てる"
+
+#: /tmp/dummy:172
+msgid "Browser Integration"
+msgstr "ブラウザとの統合"
+
+#: /tmp/dummy:173
+msgid "Firefox Integration"
+msgstr "Firefox との統合"
+
+#: /tmp/dummy:174
+msgid ""
+"To integrate with Firefox, do the following:\n"
+"\n"
+"1) Install the FlashGot extension for Firefox (www.flashgot.org/getit)\n"
+"2) Then restart Firefox and go to:\n"
+"     Tools -> FlashGot -> More Options\n"
+"3)Now select the wxDownload Fast on the Download Manager's List"
+msgstr ""
+"Firefox との統合は以下のように設定して下さい:\n"
+"\n"
+"1) FlashGot をインストールしてください(www.flashgot.org/getit)\n"
+"\n"
+"2) Firefoxを再起動して、メニュー:\n"
+"     ツール -> FlashGot -> 詳細オプション\n"
+"\n"
+"3) wxDownload Fast をダウンロードマネージャーリストから選択します"
+
+#: /tmp/dummy:175
+msgid "Internet Explorer Integration"
+msgstr "Internet Explorer との統合"
+
+#: /tmp/dummy:177
+msgid "&Save"
+msgstr "保存(&S)"
+

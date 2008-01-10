@@ -1,0 +1,69 @@
+.\" 
+.TH "wxDownload Fast" "1" "0.3.0" "Max Velasques" ""
+.SH "NAME"
+wxDownload Fast \- a multithread download manager created using the wxWidgets library.
+
+.SH "SYNTAX"
+.B wxdfast
+[options] [URL]
+
+.TP 6
+[URLS],
+Urls space separeted of the files to be downloaded. 
+Ex: www.foo.com/foo.exe ftp://ftp.foo.com/foo2.exe http://foo.com:8080/foo3.exe
+
+.SH "DESCRIPTION"
+The 
+.B wxDownload Fast 
+is a multithread download manager that has the follow characteristics:
+
+* Faster downloads (with Segmented/Multi-threaded/Accelerated transfers)
+
+* Download resuming (Pause and restart where you stopped)
+
+* Download scheduling
+
+* Organizes files you have already downloaded
+
+* View server messages (HTTP, FTP, file://). No HTTPS support.
+
+* Available in multiple languages and easily translated.  Now available in Portuguese [Brazil], Spanish, English and German 
+
+* Connection to FTP servers which require a password
+
+* Calculates the MD5 checksum of downloaded files so they can be easily verified
+
+.SH "OPTIONS"
+.TP 6
+\-\-hide,
+Start with the the main frame hide
+
+.TP 6
+\-\-notray,
+Don't show the icon on system tray
+
+.TP 6
+\-list TEXTFILE, \-\-list=TEXTFILE,
+Parse a text file with the list of files to download
+
+.TP 6
+\-destination DIR, \-\-destination=DIR,
+Destination directory
+
+.TP 6
+\-reference URL, \-\-reference=URL,
+Parse a URL that will be set as a reference URL
+
+.TP 6
+\-comments COMMENTS, \-\-comments=COMMENTS,
+Add comments for the download
+
+.SH "FIREFOX INTEGRATION"
+
+To activate the Firefox integration, do the follow:
+
+1) Install the FlashGot extension to the Firefox(www.flashgot.org/getit)
+
+2) After restart the Firefox, go to Tools \-> FlashGot \-> More Options
+
+3) Now select the wxDownload Fast on the Download Manager's List

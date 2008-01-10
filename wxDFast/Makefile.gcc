@@ -1,0 +1,485 @@
+# Projeto: wxDownload Fast
+RESOURCE_DIR = resources/
+SOURCE_DIR = src/
+LANGUAGE_DIR = languages/
+MANPAGE_DIR = man/
+AWK = awk
+CPP  = $(CROSS_PREFIX)g++
+CC   = $(CROSS_PREFIX)gcc
+AR   = $(CROSS_PREFIX)ar
+WINDRES = $(CROSS_PREFIX)windres
+STRIP = $(CROSS_PREFIX)strip
+
+BUILD_GCC = build-gcc/
+ifeq ($(Debug),1)
+	DEBUG = 1
+	BUILD_DIR = $(BUILD_GCC)Debug/
+else
+	BUILD_DIR = $(BUILD_GCC)Release/
+endif
+
+ifeq ($(DEBUG),1)
+	WXCONFIG = $(WXWIDGETS_DIR)wx-config --debug=yes
+else
+	WXCONFIG = $(WXWIDGETS_DIR)wx-config --debug=no
+endif
+
+ifeq ($(WXWIDGETS_DIR)0,0)
+	WXRC = wxrc
+else
+	WXRC = $(WXWIDGETS_DIR)utils/wxrc/wxrc
+endif
+
+INSTALL = /usr/bin/install
+INSTALL_FILE = $(INSTALL) -m 644
+INSTALL_DIR = $(INSTALL) -d 
+
+OBJ_TMP  = $(BUILD_DIR)BoxFind.o $(BUILD_DIR)BoxNew.o $(BUILD_DIR)BoxOptions.o $(BUILD_DIR)CheckNewRelease.o $(BUILD_DIR)DownloadFile.o $(BUILD_DIR)DownloadThread.o $(BUILD_DIR)FinishedList.o $(BUILD_DIR)FTP.o $(BUILD_DIR)HTTP.o $(BUILD_DIR)Graph.o $(BUILD_DIR)InProgressList.o $(BUILD_DIR)MainFrame.o $(BUILD_DIR)Metalink.o $(BUILD_DIR)ProgressBar.o $(BUILD_DIR)TaskBarIcon.o $(BUILD_DIR)UrlName.o $(BUILD_DIR)wxDFast.o $(BUILD_DIR)UtilFunctions.o
+
+ifeq ($(XRC), 1)
+	OBJ = $(OBJ_TMP)
+else
+	OBJ =$(OBJ_TMP) $(BUILD_DIR)Resources.o
+endif
+
+LINKOBJ  = $(OBJ)
+LIBS =  -L$(BUILD_DIR) -lwxmd5 -lwxsha1 -Wl `$(WXCONFIG) --libs`
+INCS =  `$(WXCONFIG) --cxxflags`
+
+RESINCS = --include-dir=`$(WXCONFIG) --cflags | $(AWK) -F-I '{ print $$3 }'`
+
+ifeq ($(XRC), 1)
+	XRC_PARAM = -D USE_EXTERNAL_XRC
+else
+	XRC_PARAM =
+endif
+
+ifeq ($(DEBUG), 1)
+	DEBUG_PARAM = -g -ggdb
+else
+	DEBUG_PARAM =
+endif
+
+ifeq ($(CPU)0, 0)
+	CPU_PARAM = 
+else
+	CPU_PARAM = -mtune=$(CPU)
+endif
+
+ifeq ($(PORTABLE), 1)
+	PORTABLE_PARAM = -D WXDFAST_PORTABLE
+else
+	PORTABLE_PARAM =
+endif
+
+WXMD5 = libwxmd5.a
+WXSHA1 = libwxsha1.a
+CXXFLAGS = $(INCS) -fno-strict-aliasing -Wall -O2 -MMD $(CPU_PARAM) $(XRC_PARAM) $(DEBUG_PARAM) $(PORTABLE_PARAM)
+
+ifeq ($(BUILD),osx)
+	BIN = "wxDownload Fast"
+else
+	BIN = wxdfast
+endif
+
+RES = wxDFast.res
+VERSION = 0.6.0
+DEBIANPACK = 1
+
+ifeq ($(BUILD), win32)
+
+all: criardir $(BIN).exe
+
+$(BIN).exe: $(LINKOBJ) $(WXMD5) $(WXSHA1) $(RES)
+	$(CPP) $(LINKOBJ) -o $(BIN).exe $(LIBS) $(BUILD_DIR)$(RES) $(CXXFLAGS)
+	$(STRIP) $(BIN).exe
+else
+all: criardir $(BIN)
+
+$(BIN): $(LINKOBJ) $(WXMD5) $(WXSHA1)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS) $(CXXFLAGS)
+#	$(STRIP) $(BIN)
+ifeq ($(BUILD), osx)
+		`$(WXCONFIG) --rescomp` $(BIN)
+		/Developer/Tools/SetFile -a B $(BIN)
+		mkdir -p $(BIN).app/Contents
+		mkdir -p $(BIN).app/Contents/MacOS
+		mkdir -p $(BIN).app/Contents/Resources
+		cp -f $(RESOURCE_DIR)Info.plist $(BIN).app/Contents
+		cp -f $(RESOURCE_DIR)RipStop/icon/dfast48x48.icns $(BIN).app/Contents/Resources/wxdfast.icns
+		echo -n "APPL????" > $(BIN).app/Contents/PkgInfo
+		mv $(BIN) $(BIN).app/Contents/MacOS
+endif
+endif
+
+$(BUILD_DIR)Resources.cpp: $(RESOURCE_DIR)boxnew.xrc $(RESOURCE_DIR)boxoptions.xrc $(RESOURCE_DIR)mainwindow.xrc $(RESOURCE_DIR)menubar.xrc $(RESOURCE_DIR)toolbar.xrc $(RESOURCE_DIR)boxabout.xrc $(RESOURCE_DIR)images.xrc
+ifeq ($(XRC), 1)
+	
+else
+	$(WXRC) -v -c -o $(BUILD_DIR)Resources.cpp resources/*.xrc
+endif
+
+criardir:
+	if [ ! -e $(BUILD_DIR) ]; then mkdir -p "$(BUILD_DIR)"; fi
+
+$(BUILD_DIR)Resources.o: $(BUILD_DIR)Resources.cpp
+	$(CPP) -c $(BUILD_DIR)Resources.cpp -o $(BUILD_DIR)Resources.o $(CXXFLAGS)
+
+$(BUILD_DIR)BoxFind.o: src/BoxFind.cpp
+	$(CPP) -c src/BoxFind.cpp -o $(BUILD_DIR)BoxFind.o $(CXXFLAGS)
+
+$(BUILD_DIR)BoxNew.o: src/BoxNew.cpp
+	$(CPP) -c src/BoxNew.cpp -o $(BUILD_DIR)BoxNew.o $(CXXFLAGS)
+
+$(BUILD_DIR)BoxOptions.o: src/BoxOptions.cpp
+	$(CPP) -c src/BoxOptions.cpp -o $(BUILD_DIR)BoxOptions.o $(CXXFLAGS)
+
+$(BUILD_DIR)CheckNewRelease.o: src/CheckNewRelease.cpp
+	$(CPP) -c src/CheckNewRelease.cpp -o $(BUILD_DIR)CheckNewRelease.o $(CXXFLAGS)
+
+$(BUILD_DIR)DownloadFile.o: src/DownloadFile.cpp
+	$(CPP) -c src/DownloadFile.cpp -o $(BUILD_DIR)DownloadFile.o $(CXXFLAGS)
+
+$(BUILD_DIR)DownloadThread.o: src/DownloadThread.cpp
+	$(CPP) -c src/DownloadThread.cpp -o $(BUILD_DIR)DownloadThread.o $(CXXFLAGS)
+
+$(BUILD_DIR)FinishedList.o: src/FinishedList.cpp
+	$(CPP) -c src/FinishedList.cpp -o $(BUILD_DIR)FinishedList.o $(CXXFLAGS)
+
+$(BUILD_DIR)FTP.o: src/FTP.cpp
+	$(CPP) -c src/FTP.cpp -o $(BUILD_DIR)FTP.o $(CXXFLAGS)
+
+$(BUILD_DIR)HTTP.o: src/HTTP.cpp
+	$(CPP) -c src/HTTP.cpp -o $(BUILD_DIR)HTTP.o $(CXXFLAGS)
+
+$(BUILD_DIR)Graph.o: src/Graph.cpp
+	$(CPP) -c src/Graph.cpp -o $(BUILD_DIR)Graph.o $(CXXFLAGS)
+
+$(BUILD_DIR)InProgressList.o: src/InProgressList.cpp
+	$(CPP) -c src/InProgressList.cpp -o $(BUILD_DIR)InProgressList.o $(CXXFLAGS)
+
+$(BUILD_DIR)MainFrame.o: src/MainFrame.cpp
+	$(CPP) -c src/MainFrame.cpp -o $(BUILD_DIR)MainFrame.o $(CXXFLAGS)
+
+$(BUILD_DIR)Metalink.o: src/Metalink.cpp
+	$(CPP) -c src/Metalink.cpp -o $(BUILD_DIR)Metalink.o $(CXXFLAGS)
+
+$(BUILD_DIR)ProgressBar.o: src/ProgressBar.cpp
+	$(CPP) -c src/ProgressBar.cpp -o $(BUILD_DIR)ProgressBar.o $(CXXFLAGS)
+
+$(BUILD_DIR)TaskBarIcon.o: src/TaskBarIcon.cpp
+	$(CPP) -c src/TaskBarIcon.cpp -o $(BUILD_DIR)TaskBarIcon.o $(CXXFLAGS)
+
+$(BUILD_DIR)UrlName.o: src/UrlName.cpp
+	$(CPP) -c src/UrlName.cpp -o $(BUILD_DIR)UrlName.o $(CXXFLAGS)
+
+$(BUILD_DIR)UtilFunctions.o: src/UtilFunctions.cpp
+	$(CPP) -c src/UtilFunctions.cpp -o $(BUILD_DIR)UtilFunctions.o $(CXXFLAGS)
+
+$(BUILD_DIR)wxDFast.o: src/wxDFast.cpp
+	$(CPP) -c src/wxDFast.cpp -o $(BUILD_DIR)wxDFast.o $(CXXFLAGS)
+
+$(RES): src/wxDFast.rc
+	(cd src;$(WINDRES) -i wxDFast.rc -J rc -o ../$(BUILD_DIR)$(RES) -O coff $(RESINCS))
+
+$(WXMD5): $(BUILD_DIR)md5.o $(BUILD_DIR)wxMD5.o
+	$(AR) cur $(BUILD_DIR)$(WXMD5) $(BUILD_DIR)wxMD5.o $(BUILD_DIR)md5.o
+
+$(BUILD_DIR)md5.o: src/wxMD5/md5.cpp
+	$(CPP) -c src/wxMD5/md5.cpp -o $(BUILD_DIR)md5.o $(CXXFLAGS)
+
+$(BUILD_DIR)wxMD5.o: src/wxMD5/wxMD5.cpp
+	$(CPP) -c src/wxMD5/wxMD5.cpp -o $(BUILD_DIR)wxMD5.o $(CXXFLAGS)
+	
+$(WXSHA1): $(BUILD_DIR)sha1.o $(BUILD_DIR)wxSHA1.o
+	$(AR) cur $(BUILD_DIR)$(WXSHA1) $(BUILD_DIR)wxSHA1.o $(BUILD_DIR)sha1.o
+
+$(BUILD_DIR)sha1.o: src/wxSHA1/sha1.cpp
+	$(CPP) -c src/wxSHA1/sha1.cpp -o $(BUILD_DIR)sha1.o $(CXXFLAGS)
+
+$(BUILD_DIR)wxSHA1.o: src/wxSHA1/wxSHA1.cpp
+	$(CPP) -c src/wxSHA1/wxSHA1.cpp -o $(BUILD_DIR)wxSHA1.o $(CXXFLAGS)
+
+
+install: all
+	$(INSTALL_DIR) $(DESTDIR)/usr/lib/$(BIN)
+ifeq ($(BUILD), win32)
+	$(INSTALL_FILE) --mode=755 $(BIN).exe $(DESTDIR)/usr/bin/$(BIN)
+else
+	$(INSTALL_FILE) --mode=755 $(BIN) $(DESTDIR)/usr/bin/$(BIN)
+endif
+	$(INSTALL_FILE) README* $(DESTDIR)/usr/lib/$(BIN)
+	$(INSTALL_FILE) ChangeLog* $(DESTDIR)/usr/lib/$(BIN)
+#	$(INSTALL_FILE) COPYING $(DESTDIR)/usr/lib/$(BIN)
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/pixmaps
+	$(INSTALL_FILE) $(RESOURCE_DIR)wxdfast.xpm $(DESTDIR)/usr/share/pixmaps
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/$(BIN)
+	$(INSTALL_FILE) $(RESOURCE_DIR)*.xrc $(DESTDIR)/usr/share/$(BIN)/
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/$(BIN)/xpm
+	$(INSTALL_FILE) $(RESOURCE_DIR)xpm/*.xpm $(DESTDIR)/usr/share/$(BIN)/xpm/
+	$(INSTALL_FILE) $(RESOURCE_DIR)xpm/*.ico $(DESTDIR)/usr/share/$(BIN)/xpm/
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/$(BIN)/xpm/big
+	$(INSTALL_FILE) $(RESOURCE_DIR)xpm/big/*.xpm $(DESTDIR)/usr/share/$(BIN)/xpm/big/
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/$(BIN)/xpm/small
+	$(INSTALL_FILE) $(RESOURCE_DIR)xpm/small/*.xpm $(DESTDIR)/usr/share/$(BIN)/xpm/small/
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/$(BIN)/RipStop
+	$(INSTALL_FILE) $(RESOURCE_DIR)RipStop/readme.txt $(DESTDIR)/usr/share/$(BIN)/RipStop/
+	$(INSTALL_FILE) $(RESOURCE_DIR)RipStop/license.txt $(DESTDIR)/usr/share/$(BIN)/RipStop/
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/$(BIN)/RipStop/icon
+	$(INSTALL_FILE) $(RESOURCE_DIR)RipStop/icon/*.png $(DESTDIR)/usr/share/$(BIN)/RipStop/icon
+	$(INSTALL_FILE) $(RESOURCE_DIR)RipStop/icon/*.ico $(DESTDIR)/usr/share/$(BIN)/RipStop/icon
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/$(BIN)/RipStop/svg
+	$(INSTALL_FILE) $(RESOURCE_DIR)RipStop/svg/*.svg $(DESTDIR)/usr/share/$(BIN)/RipStop/svg/
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/$(BIN)/RipStop/logo
+	$(INSTALL_FILE) $(RESOURCE_DIR)RipStop/logo/*.png $(DESTDIR)/usr/share/$(BIN)/RipStop/logo/
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/$(BIN)/RipStop/menubar
+	$(INSTALL_FILE) $(RESOURCE_DIR)RipStop/menubar/*.png $(DESTDIR)/usr/share/$(BIN)/RipStop/menubar/
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/$(BIN)/RipStop/toolbar
+	$(INSTALL_FILE) $(RESOURCE_DIR)RipStop/toolbar/*.png $(DESTDIR)/usr/share/$(BIN)/RipStop/toolbar/
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/$(BIN)/RipStop/preview
+	$(INSTALL_FILE) $(RESOURCE_DIR)RipStop/preview/*.png $(DESTDIR)/usr/share/$(BIN)/RipStop/preview/
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/locale/pt_BR/LC_MESSAGES
+	$(INSTALL_FILE) $(LANGUAGE_DIR)pt_BR/wxDFast.mo $(DESTDIR)/usr/share/locale/pt_BR/LC_MESSAGES
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/locale/es/LC_MESSAGES
+	$(INSTALL_FILE) $(LANGUAGE_DIR)es/wxDFast.mo $(DESTDIR)/usr/share/locale/es/LC_MESSAGES
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/locale/fr/LC_MESSAGES
+	$(INSTALL_FILE) $(LANGUAGE_DIR)fr/wxDFast.mo $(DESTDIR)/usr/share/locale/fr/LC_MESSAGES
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/locale/de/LC_MESSAGES
+	$(INSTALL_FILE) $(LANGUAGE_DIR)de/wxDFast.mo $(DESTDIR)/usr/share/locale/de/LC_MESSAGES
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/locale/cs/LC_MESSAGES
+	$(INSTALL_FILE) $(LANGUAGE_DIR)cs/wxDFast.mo $(DESTDIR)/usr/share/locale/cs/LC_MESSAGES
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/locale/ru/LC_MESSAGES
+	$(INSTALL_FILE) $(LANGUAGE_DIR)ru/wxDFast.mo $(DESTDIR)/usr/share/locale/ru/LC_MESSAGES
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/locale/tr/LC_MESSAGES
+	$(INSTALL_FILE) $(LANGUAGE_DIR)tr/wxDFast.mo $(DESTDIR)/usr/share/locale/tr/LC_MESSAGES
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/locale/hu/LC_MESSAGES
+	$(INSTALL_FILE) $(LANGUAGE_DIR)hu/wxDFast.mo $(DESTDIR)/usr/share/locale/hu/LC_MESSAGES
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/locale/pl/LC_MESSAGES
+	$(INSTALL_FILE) $(LANGUAGE_DIR)pl/wxDFast.mo $(DESTDIR)/usr/share/locale/hu/LC_MESSAGES
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/locale/id/LC_MESSAGES
+	$(INSTALL_FILE) $(LANGUAGE_DIR)id/wxDFast.mo $(DESTDIR)/usr/share/locale/id/LC_MESSAGES
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/locale/nl/LC_MESSAGES
+	$(INSTALL_FILE) $(LANGUAGE_DIR)nl/wxDFast.mo $(DESTDIR)/usr/share/locale/nl/LC_MESSAGES
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/locale/it/LC_MESSAGES
+	$(INSTALL_FILE) $(LANGUAGE_DIR)it/wxDFast.mo $(DESTDIR)/usr/share/locale/it/LC_MESSAGES
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/locale/ja/LC_MESSAGES
+	$(INSTALL_FILE) $(LANGUAGE_DIR)ja/wxDFast.mo $(DESTDIR)/usr/share/locale/ja/LC_MESSAGES
+#	$(INSTALL_DIR) $(DESTDIR)/usr/share/locale/hy/LC_MESSAGES
+#	$(INSTALL_FILE) $(LANGUAGE_DIR)hy/wxDFast.mo $(DESTDIR)/usr/share/locale/hy/LC_MESSAGES
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/man/man1
+	$(INSTALL_FILE) $(MANPAGE_DIR)man1/wxdfast.1.gz $(DESTDIR)/usr/share/man/man1
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/man/pt_BR/man1
+	$(INSTALL_FILE) $(MANPAGE_DIR)pt_BR/man1/wxdfast.1.gz $(DESTDIR)/usr/share/man/pt_BR/man1
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/man/pt/man1
+	$(INSTALL_FILE) $(MANPAGE_DIR)pt_BR/man1/wxdfast.1.gz $(DESTDIR)/usr/share/man/pt/man1
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/menu
+	$(INSTALL_FILE) $(RESOURCE_DIR)wxdfast $(DESTDIR)/usr/share/menu
+	$(INSTALL_DIR) $(DESTDIR)/usr/share/applications
+	$(INSTALL_FILE) $(RESOURCE_DIR)wxdfast.desktop $(DESTDIR)/usr/share/applications
+
+uninstall:
+ifeq ($(BUILD), win32)
+	rm -f $(DESTDIR)/usr/bin/$(BIN).exe
+else
+	rm -f $(DESTDIR)/usr/bin/$(BIN)
+endif
+	rm -f $(DESTDIR)/usr/lib/$(BIN)/README*
+	rm -f $(DESTDIR)/usr/lib/$(BIN)/ChangeLog*
+	rm -f $(DESTDIR)/usr/lib/$(BIN)/gpl.txt
+	rm -f $(DESTDIR)/usr/lib/$(BIN)/COPYING
+	rm -f $(DESTDIR)/usr/share/$(BIN)/xpm/small/*.xpm
+	rmdir $(DESTDIR)/usr/share/$(BIN)/xpm/small
+	rm -f $(DESTDIR)/usr/share/$(BIN)/xpm/big/*.xpm
+	rmdir $(DESTDIR)/usr/share/$(BIN)/xpm/big
+	rm -f $(DESTDIR)/usr/share/$(BIN)/xpm/*.xpm
+	rm -f $(DESTDIR)/usr/share/$(BIN)/xpm/*.ico
+	rmdir $(DESTDIR)/usr/share/$(BIN)/xpm
+	rm -f $(DESTDIR)/usr/share/$(BIN)/RipStop/icon/*.png
+	rm -f $(DESTDIR)/usr/share/$(BIN)/RipStop/icon/*.ico
+	rmdir $(DESTDIR)/usr/share/$(BIN)/RipStop/icon
+	rm -f $(DESTDIR)/usr/share/$(BIN)/RipStop/logo/*.png
+	rmdir $(DESTDIR)/usr/share/$(BIN)/RipStop/logo
+	rm -f $(DESTDIR)/usr/share/$(BIN)/RipStop/menubar/*.png
+	rmdir $(DESTDIR)/usr/share/$(BIN)/RipStop/menubar
+	rm -f $(DESTDIR)/usr/share/$(BIN)/RipStop/preview/*.png
+	rmdir $(DESTDIR)/usr/share/$(BIN)/RipStop/preview
+	rm -f $(DESTDIR)/usr/share/$(BIN)/RipStop/toolbar/*.png
+	rmdir $(DESTDIR)/usr/share/$(BIN)/RipStop/toolbar
+	rm -f $(DESTDIR)/usr/share/$(BIN)/RipStop/svg/*.svg
+	rmdir $(DESTDIR)/usr/share/$(BIN)/RipStop/svg
+	rmdir $(DESTDIR)/usr/share/$(BIN)/RipStop
+	rm -f $(DESTDIR)/usr/share/$(BIN)/*.xrc
+	rmdir $(DESTDIR)/usr/share/$(BIN)
+	rm -f $(DESTDIR)/usr/share/pixmaps/wxdfast.xpm
+	rm -f $(DESTDIR)/usr/share/locale/pt_BR/LC_MESSAGES/wxDFast.mo
+	rm -f $(DESTDIR)/usr/share/locale/es/LC_MESSAGES/wxDFast.mo
+	rm -f $(DESTDIR)/usr/share/locale/fr/LC_MESSAGES/wxDFast.mo
+	rm -f $(DESTDIR)/usr/share/locale/cs/LC_MESSAGES/wxDFast.mo
+	rm -f $(DESTDIR)/usr/share/locale/de/LC_MESSAGES/wxDFast.mo
+	rm -f $(DESTDIR)/usr/share/locale/ru/LC_MESSAGES/wxDFast.mo
+	rm -f $(DESTDIR)/usr/share/locale/tr/LC_MESSAGES/wxDFast.mo
+	rm -f $(DESTDIR)/usr/share/locale/hu/LC_MESSAGES/wxDFast.mo
+	rm -f $(DESTDIR)/usr/share/locale/pl/LC_MESSAGES/wxDFast.mo
+	rm -f $(DESTDIR)/usr/share/locale/id/LC_MESSAGES/wxDFast.mo
+	rm -f $(DESTDIR)/usr/share/locale/nl/LC_MESSAGES/wxDFast.mo
+	rm -f $(DESTDIR)/usr/share/locale/it/LC_MESSAGES/wxDFast.mo
+	rm -f $(DESTDIR)/usr/share/locale/ja/LC_MESSAGES/wxDFast.mo
+#	rm -f $(DESTDIR)/usr/share/locale/hy/LC_MESSAGES/wxDFast.mo
+	rm -f $(DESTDIR)/usr/share/man/man1/wxdfast.1.gz
+	rm -f $(DESTDIR)/usr/share/man/pt/man1/wxdfast.1.gz
+	rm -f $(DESTDIR)/usr/share/man/pt_BR/man1/wxdfast.1.gz
+	rm -f $(DESTDIR)/usr/share/menu/wxdfast
+	rm -f $(DESTDIR)/usr/share/applications/wxdfast.desktop
+	rmdir $(DESTDIR)/usr/lib/$(BIN)
+	if [ -x /usr/bin/update-menus ] ; then update-menus ; fi
+
+dist: source
+	tar -cf $(BIN)-$(VERSION)-src.tar $(BIN)-$(VERSION)
+	gzip $(BIN)-$(VERSION)-src.tar
+	rm -r $(BIN)-$(VERSION)
+
+deb: clean
+	dpkg-buildpackage -rfakeroot
+
+source:
+	rm -f $(BIN)-$(VERSION)-src.tar.gz
+	rm -rf $(BIN)-$(VERSION)
+	mkdir $(BIN)-$(VERSION)
+	mkdir $(BIN)-$(VERSION)/$(LANGUAGE_DIR)
+	cp $(LANGUAGE_DIR)Makefile.am $(BIN)-$(VERSION)/$(LANGUAGE_DIR)
+	mkdir $(BIN)-$(VERSION)/$(LANGUAGE_DIR)pt_BR
+	cp $(LANGUAGE_DIR)pt_BR/wxDFast.* $(BIN)-$(VERSION)/$(LANGUAGE_DIR)pt_BR
+	cp $(LANGUAGE_DIR)pt_BR/Makefile.am $(BIN)-$(VERSION)/$(LANGUAGE_DIR)pt_BR
+	mkdir $(BIN)-$(VERSION)/$(LANGUAGE_DIR)es
+	cp $(LANGUAGE_DIR)es/wxDFast.* $(BIN)-$(VERSION)/$(LANGUAGE_DIR)es
+	cp $(LANGUAGE_DIR)es/Makefile.am $(BIN)-$(VERSION)/$(LANGUAGE_DIR)es
+	mkdir $(BIN)-$(VERSION)/$(LANGUAGE_DIR)fr
+	cp $(LANGUAGE_DIR)fr/wxDFast.* $(BIN)-$(VERSION)/$(LANGUAGE_DIR)fr
+	cp $(LANGUAGE_DIR)fr/Makefile.am $(BIN)-$(VERSION)/$(LANGUAGE_DIR)fr
+	mkdir $(BIN)-$(VERSION)/$(LANGUAGE_DIR)de
+	cp $(LANGUAGE_DIR)de/wxDFast.* $(BIN)-$(VERSION)/$(LANGUAGE_DIR)de
+	cp $(LANGUAGE_DIR)de/Makefile.am $(BIN)-$(VERSION)/$(LANGUAGE_DIR)de
+	mkdir $(BIN)-$(VERSION)/$(LANGUAGE_DIR)cs
+	cp $(LANGUAGE_DIR)cs/wxDFast.* $(BIN)-$(VERSION)/$(LANGUAGE_DIR)cs
+	cp $(LANGUAGE_DIR)cs/Makefile.am $(BIN)-$(VERSION)/$(LANGUAGE_DIR)cs
+	mkdir $(BIN)-$(VERSION)/$(LANGUAGE_DIR)ru
+	cp $(LANGUAGE_DIR)ru/wxDFast.* $(BIN)-$(VERSION)/$(LANGUAGE_DIR)ru
+	cp $(LANGUAGE_DIR)ru/Makefile.am $(BIN)-$(VERSION)/$(LANGUAGE_DIR)ru
+	mkdir $(BIN)-$(VERSION)/$(LANGUAGE_DIR)tr
+	cp $(LANGUAGE_DIR)tr/wxDFast.* $(BIN)-$(VERSION)/$(LANGUAGE_DIR)tr
+	cp $(LANGUAGE_DIR)tr/Makefile.am $(BIN)-$(VERSION)/$(LANGUAGE_DIR)tr
+	mkdir $(BIN)-$(VERSION)/$(LANGUAGE_DIR)hu
+	cp $(LANGUAGE_DIR)hu/wxDFast.* $(BIN)-$(VERSION)/$(LANGUAGE_DIR)hu
+	cp $(LANGUAGE_DIR)hu/Makefile.am $(BIN)-$(VERSION)/$(LANGUAGE_DIR)hu
+	mkdir $(BIN)-$(VERSION)/$(LANGUAGE_DIR)pl
+	cp $(LANGUAGE_DIR)pl/wxDFast.* $(BIN)-$(VERSION)/$(LANGUAGE_DIR)pl
+	cp $(LANGUAGE_DIR)pl/Makefile.am $(BIN)-$(VERSION)/$(LANGUAGE_DIR)pl
+	mkdir $(BIN)-$(VERSION)/$(LANGUAGE_DIR)id
+	cp $(LANGUAGE_DIR)id/wxDFast.* $(BIN)-$(VERSION)/$(LANGUAGE_DIR)id
+	cp $(LANGUAGE_DIR)id/Makefile.am $(BIN)-$(VERSION)/$(LANGUAGE_DIR)id
+	mkdir $(BIN)-$(VERSION)/$(LANGUAGE_DIR)nl
+	cp $(LANGUAGE_DIR)nl/wxDFast.* $(BIN)-$(VERSION)/$(LANGUAGE_DIR)nl
+	cp $(LANGUAGE_DIR)nl/Makefile.am $(BIN)-$(VERSION)/$(LANGUAGE_DIR)nl
+	mkdir $(BIN)-$(VERSION)/$(LANGUAGE_DIR)it
+	cp $(LANGUAGE_DIR)it/wxDFast.* $(BIN)-$(VERSION)/$(LANGUAGE_DIR)it
+	cp $(LANGUAGE_DIR)it/Makefile.am $(BIN)-$(VERSION)/$(LANGUAGE_DIR)it
+	mkdir $(BIN)-$(VERSION)/$(LANGUAGE_DIR)ja
+	cp $(LANGUAGE_DIR)ja/wxDFast.* $(BIN)-$(VERSION)/$(LANGUAGE_DIR)ja
+	cp $(LANGUAGE_DIR)ja/Makefile.am $(BIN)-$(VERSION)/$(LANGUAGE_DIR)ja
+#	mkdir $(BIN)-$(VERSION)/$(LANGUAGE_DIR)hy
+#	cp $(LANGUAGE_DIR)hy/wxDFast.* $(BIN)-$(VERSION)/$(LANGUAGE_DIR)hy
+#	cp $(LANGUAGE_DIR)hy/Makefile.am $(BIN)-$(VERSION)/$(LANGUAGE_DIR)hy
+	mkdir $(BIN)-$(VERSION)/$(MANPAGE_DIR)
+	cp $(MANPAGE_DIR)Makefile.am $(BIN)-$(VERSION)/$(MANPAGE_DIR)
+	mkdir $(BIN)-$(VERSION)/$(MANPAGE_DIR)man1
+	cp $(MANPAGE_DIR)man1/wxdfast.1 $(BIN)-$(VERSION)/$(MANPAGE_DIR)man1
+	cp $(MANPAGE_DIR)man1/wxdfast.1.gz $(BIN)-$(VERSION)/$(MANPAGE_DIR)man1
+	cp $(MANPAGE_DIR)man1/Makefile.am $(BIN)-$(VERSION)/$(MANPAGE_DIR)man1
+	mkdir $(BIN)-$(VERSION)/$(MANPAGE_DIR)pt_BR
+	cp $(MANPAGE_DIR)pt_BR/Makefile.am $(BIN)-$(VERSION)/$(MANPAGE_DIR)pt_BR
+	mkdir $(BIN)-$(VERSION)/$(MANPAGE_DIR)pt_BR/man1
+	cp $(MANPAGE_DIR)pt_BR/man1/wxdfast.1 $(BIN)-$(VERSION)/$(MANPAGE_DIR)pt_BR/man1
+	cp $(MANPAGE_DIR)pt_BR/man1/wxdfast.1.gz $(BIN)-$(VERSION)/$(MANPAGE_DIR)pt_BR/man1
+	cp $(MANPAGE_DIR)pt_BR/man1/Makefile.am $(BIN)-$(VERSION)/$(MANPAGE_DIR)pt_BR/man1
+	mkdir $(BIN)-$(VERSION)/resources
+	cp $(RESOURCE_DIR)*.xrc $(BIN)-$(VERSION)/$(RESOURCE_DIR)
+	cp $(RESOURCE_DIR)wxdfast.desktop $(BIN)-$(VERSION)/$(RESOURCE_DIR)
+	cp $(RESOURCE_DIR)wxdfast $(BIN)-$(VERSION)/$(RESOURCE_DIR)
+	cp $(RESOURCE_DIR)Makefile.am $(BIN)-$(VERSION)/$(RESOURCE_DIR)
+	cp $(RESOURCE_DIR)wxdfast.iss $(BIN)-$(VERSION)/$(RESOURCE_DIR)
+	mkdir $(BIN)-$(VERSION)/resources/xpm
+	cp $(RESOURCE_DIR)xpm/*.xpm $(BIN)-$(VERSION)/$(RESOURCE_DIR)xpm
+	cp $(RESOURCE_DIR)xpm/*.ico $(BIN)-$(VERSION)/$(RESOURCE_DIR)xpm
+	cp $(RESOURCE_DIR)xpm/Makefile.am $(BIN)-$(VERSION)/$(RESOURCE_DIR)xpm
+	mkdir $(BIN)-$(VERSION)/$(RESOURCE_DIR)xpm/small
+	cp $(RESOURCE_DIR)xpm/small/*.xpm $(BIN)-$(VERSION)/$(RESOURCE_DIR)xpm/small
+	cp $(RESOURCE_DIR)xpm/small/Makefile.am $(BIN)-$(VERSION)/$(RESOURCE_DIR)xpm/small
+	mkdir $(BIN)-$(VERSION)/$(RESOURCE_DIR)xpm/big
+	cp $(RESOURCE_DIR)xpm/big/*.xpm $(BIN)-$(VERSION)/$(RESOURCE_DIR)xpm/big
+	cp $(RESOURCE_DIR)xpm/big/Makefile.am $(BIN)-$(VERSION)/$(RESOURCE_DIR)xpm/big
+	mkdir $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop
+	cp $(RESOURCE_DIR)RipStop/license.txt $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop
+	cp $(RESOURCE_DIR)RipStop/readme.txt $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop
+	cp $(RESOURCE_DIR)RipStop/Makefile.am $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop
+	mkdir $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/icon
+	cp $(RESOURCE_DIR)RipStop/icon/Makefile.am $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/icon
+	cp $(RESOURCE_DIR)RipStop/icon/*.png $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/icon
+	cp $(RESOURCE_DIR)RipStop/icon/*.ico $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/icon
+	mkdir $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/logo
+	cp $(RESOURCE_DIR)RipStop/logo/*.png $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/logo
+	cp $(RESOURCE_DIR)RipStop/logo/Makefile.am $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/logo
+	mkdir $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/menubar
+	cp $(RESOURCE_DIR)RipStop/menubar/*.png $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/menubar
+	cp $(RESOURCE_DIR)RipStop/menubar/Makefile.am $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/menubar
+	mkdir $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/preview
+	cp $(RESOURCE_DIR)RipStop/preview/*.png $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/preview
+	cp $(RESOURCE_DIR)RipStop/preview/Makefile.am $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/preview
+	mkdir $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/svg
+	cp $(RESOURCE_DIR)RipStop/svg/*.svg $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/svg
+	cp $(RESOURCE_DIR)RipStop/svg/Makefile.am $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/svg
+	mkdir $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/toolbar
+	cp $(RESOURCE_DIR)RipStop/toolbar/*.png $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/toolbar
+	cp $(RESOURCE_DIR)RipStop/toolbar/Makefile.am $(BIN)-$(VERSION)/$(RESOURCE_DIR)RipStop/toolbar
+	mkdir $(BIN)-$(VERSION)/$(SOURCE_DIR)
+	mkdir $(BIN)-$(VERSION)/$(SOURCE_DIR)wxMD5
+	mkdir $(BIN)-$(VERSION)/$(SOURCE_DIR)wxSHA1
+	cp $(SOURCE_DIR)Makefile.am $(BIN)-$(VERSION)/$(SOURCE_DIR)
+	cp $(SOURCE_DIR)*.cpp $(BIN)-$(VERSION)/$(SOURCE_DIR)
+	cp $(SOURCE_DIR)*.h $(BIN)-$(VERSION)/$(SOURCE_DIR)
+	cp $(SOURCE_DIR)*.rc $(BIN)-$(VERSION)/$(SOURCE_DIR)
+	cp $(SOURCE_DIR)wxMD5/*.cpp $(BIN)-$(VERSION)/$(SOURCE_DIR)wxMD5
+	cp $(SOURCE_DIR)wxMD5/*.h $(BIN)-$(VERSION)/$(SOURCE_DIR)wxMD5
+	cp $(SOURCE_DIR)wxSHA1/*.cpp $(BIN)-$(VERSION)/$(SOURCE_DIR)wxSHA1
+	cp $(SOURCE_DIR)wxSHA1/*.h $(BIN)-$(VERSION)/$(SOURCE_DIR)wxSHA1
+	mkdir $(BIN)-$(VERSION)/debian
+	cp -f debian/* $(BIN)-$(VERSION)/debian
+	cp bootstrap $(BIN)-$(VERSION)
+	cp AUTHORS $(BIN)-$(VERSION)
+	cp COPYING $(BIN)-$(VERSION)
+	cp README* $(BIN)-$(VERSION)
+	cp ChangeLog* $(BIN)-$(VERSION)
+	cp TODO* $(BIN)-$(VERSION)
+	cp configure.in $(BIN)-$(VERSION)
+	cp Makefile.am $(BIN)-$(VERSION)
+	cp Makefile.gcc $(BIN)-$(VERSION)
+	cp makefile.vc $(BIN)-$(VERSION)
+	cp wxDFast.cbp $(BIN)-$(VERSION)
+
+cleanRelease: tempclean
+	rm -fr $(BUILD_GCC)Release
+
+cleanDebug: tempclean
+	rm -fr $(BUILD_GCC)Debug
+
+distcleanRelease: cleanall
+
+distcleanDebug: cleanall
+
+clean: tempclean
+	rm -fr $(BUILD_GCC)
+
+cleanall: clean
+	rm -fr $(BIN) $(BIN).exe $(BIN)-$(VERSION)-src.tar.gz 
+
+tempclean:
+	rm -fr $(BIN)-$(VERSION) debian/wxdfast.postinst.debhelper debian/wxdfast.postrm.debhelper debian/wxdfast.substvars debian/$(BIN) configure-stamp build-stamp

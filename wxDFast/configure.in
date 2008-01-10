@@ -1,0 +1,113 @@
+dnl Process this file with autoconf to produce a configure script.
+
+AC_INIT(configure.in)
+AM_INIT_AUTOMAKE(wxdfast, 0.6.0)
+AM_CONFIG_HEADER(config.h)
+AM_MAINTAINER_MODE
+
+dnl Set of available languages.
+ALL_LINGUAS="cs de es fr hu id it ja pl pt_BR nl ru tr"
+
+AC_ARG_ENABLE(debug,
+[  --enable-debug          This option build the program in debug mode],
+[ debug=yes])
+
+AC_ARG_ENABLE(xrcmode,
+[  --enable-xrcmode        This option make the program to use external xrc
+                          files, instead of built-in],
+[ xrcmode=yes])
+
+AC_ARG_ENABLE(win32build,
+[  --enable-win32build     Use this option when building on Windows systems],
+[ win32build=yes])
+
+AC_ARG_ENABLE(portable,
+[  --enable-portable     Use this option to build in portable mode (Windows only)],
+[ portable=yes])
+
+
+AM_CONDITIONAL([DEBUG],     [test x$debug = xyes])
+AM_CONDITIONAL([XRCMODE],   [test x$xrcmode = xyes])
+AM_CONDITIONAL([NOXRCMODE], [test x$xrcmode = x])
+AM_CONDITIONAL([WIN32BUILD], [test x$win32build = xyes])
+AM_CONDITIONAL([PORTABLE], [test x$portable = xyes])
+
+AC_ISC_POSIX
+AC_PROG_CC
+AM_PROG_CC_STDC
+AC_HEADER_STDC
+
+AC_PROG_CPP
+AC_PROG_CXX
+AC_PROG_AWK
+
+AM_PROG_LIBTOOL
+
+# cross-compile checks
+if test x"${build}" != x"${host}"; 
+then
+   AC_CHECK_TOOL(WINDRES, windres, :)
+   AM_CONDITIONAL([WIN32BUILD], [test "" = ""])
+fi
+
+AM_OPTIONS_WXCONFIG
+AM_PATH_WXCONFIG(2.6.0, wxWin=1, , [xrc,std])
+        if test "$wxWin" != 1; then
+        AC_MSG_ERROR([
+                wxWindows must be installed on your system.
+
+                Please check that wx-config is in path, the directory
+                where wxWindows libraries are installed (returned by
+                'wx-config --libs' or 'wx-config --static --libs' command)
+                is in LD_LIBRARY_PATH or equivalent variable and
+                wxWindows version is 2.6.0 or above.
+                ])
+	fi
+
+AC_ARG_VAR(WXRC, Path to wxrc resource compiler)
+AC_MSG_CHECKING([for wxrc])
+if test "x$WXRC" = x ; then
+    WXRC=`$WX_CONFIG_WITH_ARGS --utility=wxrc`
+    if test "x$WXRC" = x ; then
+        AC_MSG_RESULT([not found])
+        AC_MSG_ERROR([
+            wxrc could not be found. This program gets build together with wxWidgets.
+            Please make sure wxrc is within your path.
+            ])
+    fi
+fi
+AC_MSG_RESULT([$WXRC])
+
+AC_OUTPUT([
+Makefile
+languages/Makefile
+languages/cs/Makefile
+languages/de/Makefile
+languages/es/Makefile
+languages/fr/Makefile
+languages/hu/Makefile
+languages/id/Makefile
+languages/it/Makefile
+languages/ja/Makefile
+languages/pl/Makefile
+languages/pt_BR/Makefile
+languages/nl/Makefile
+languages/ru/Makefile
+languages/tr/Makefile
+man/Makefile
+man/man1/Makefile
+man/pt_BR/Makefile
+man/pt_BR/man1/Makefile
+resources/Makefile
+resources/xpm/Makefile
+resources/xpm/big/Makefile
+resources/xpm/small/Makefile
+resources/RipStop/Makefile
+resources/RipStop/menubar/Makefile
+resources/RipStop/toolbar/Makefile
+resources/RipStop/preview/Makefile
+resources/RipStop/svg/Makefile
+resources/RipStop/icon/Makefile
+resources/RipStop/logo/Makefile
+src/Makefile
+])

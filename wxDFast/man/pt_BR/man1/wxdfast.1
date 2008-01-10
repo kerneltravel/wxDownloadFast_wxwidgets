@@ -1,0 +1,68 @@
+.\" 
+.TH "wxDownload Fast" "1" "0.3.0" "Max Velasques" ""
+.SH "NOME"
+wxDownload Fast \- um gerenciador de downloads criado usando a biblioteca wxWidgets.
+
+.SH "SINTAXE"
+.B wxdfast
+[opções] [URL]
+
+[URLS],
+Urls, separadas por espaço, dos arquivos a serem baixados
+Ex: www.foo.com/foo.exe ftp://ftp.foo.com/foo2.exe http://foo.com:8080/foo3.exe
+
+.SH "DESCRIÇÃO"
+O
+.B wxDownload Fast 
+é um gerenciador de downloads que tem as seguintes características:
+
+* Downloads mais rápidos (com transferências Segmentadas/Multi-threaded/Aceleradas)
+
+* Reinicio de downloads (Pare e reinicie onde você parou)
+
+* Agendamento de downloads
+
+* Organiza os arquivos que você já baixou
+
+* Visualização de messagens do servidor (HTTP, FTP, file://). Sem suporte HTTPS.
+
+* Disponível em vários idiomas e facilmente traduzível. Disponível agora em Português [Brasil], Espanhol, Inglês e Alemão
+
+* Conexão com servidores FTP que necessitam de senhas
+
+* Calcula o código de verificação MD5 dos arquivos baixados, de modo que possam ser verificados facilmente
+
+.SH "OPÇÕES"
+.TP 6
+\-\-hide,
+Iniciar com a janela principal escondida
+
+.TP 6
+\-\-notray,
+Não mostar o icone do programa na bandeja do sistema
+
+.TP 6
+\-list TEXTFILE, \-\-list=TEXTFILE,
+Passa um arquivo de texto com a lista de arquivos a serem baixados
+
+.TP 6
+\-destination DIR, \-\-destination=DIR,
+Diretório de destino
+
+.TP 6
+\-reference URL, \-\-reference=URL,
+Passa uma URL, que será guardada como uma URL de referência
+
+.TP 6
+\-comments COMMENTS, \-\-comments=COMMENTS,
+Adiciona comentários ao download
+
+.SH "INTEGRAÇÃO COM O FIREFOX"
+
+Para ativar a integração com o Firefox faça o seguinte:
+
+1) Instale a extenção FlashGot para o Firefox(www.flashgot.org/getit)
+
+2) Após reiniciar o Firefox vá em Ferramentas \-> FlashGot \-> Mais opções
+
+3) Agora selecione wxDownload Fast na lista de Gerenciadores de Download

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="wxDFast" />
+		<Option makefile="Makefile.gcc" />
+		<Option makefile_is_custom="1" />
+		<Option pch_mode="2" />
+		<Option default_target="Release" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="wxdfast" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option projectResourceIncludeDirsRelation="0" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<MakeCommands>
+					<Build command="$make -f $makefile $target=1" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean$target" />
+					<DistClean command="$make -f $makefile distclean$target" />
+				</MakeCommands>
+			</Target>
+			<Target title="Release">
+				<Option output="wxdfast" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Option projectResourceIncludeDirsRelation="0" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-s" />
+				</Compiler>
+				<MakeCommands>
+					<Build command="$make -f $makefile $target=1" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean$target" />
+					<DistClean command="$make -f $makefile distclean$target" />
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="`wx-config --cflags`" />
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add option="`wx-config --libs`" />
+		</Linker>
+		<Unit filename="resources/boxabout.xrc" />
+		<Unit filename="resources/boxnew.xrc" />
+		<Unit filename="resources/boxoptions.xrc" />
+		<Unit filename="resources/images.xrc" />
+		<Unit filename="resources/mainwindow.xrc" />
+		<Unit filename="resources/menubar.xrc" />
+		<Unit filename="resources/toolbar.xrc" />
+		<Unit filename="src/BoxFind.cpp" />
+		<Unit filename="src/BoxNew.cpp" />
+		<Unit filename="src/BoxOptions.cpp" />
+		<Unit filename="src/CheckNewRelease.cpp" />
+		<Unit filename="src/DownloadFile.cpp" />
+		<Unit filename="src/DownloadThread.cpp" />
+		<Unit filename="src/FTP.cpp" />
+		<Unit filename="src/FinishedList.cpp" />
+		<Unit filename="src/Graph.cpp" />
+		<Unit filename="src/HTTP.cpp" />
+		<Unit filename="src/InProgressList.cpp" />
+		<Unit filename="src/MainFrame.cpp" />
+		<Unit filename="src/Metalink.cpp" />
+		<Unit filename="src/ProgressBar.cpp" />
+		<Unit filename="src/TaskBarIcon.cpp" />
+		<Unit filename="src/UrlName.cpp" />
+		<Unit filename="src/UtilFunctions.cpp" />
+		<Unit filename="src/wxDFast.cpp" />
+		<Unit filename="src/wxDFast.h" />
+		<Unit filename="src/wxDFast.rc" />
+		<Unit filename="src/wxMD5/md5.cpp" />
+		<Unit filename="src/wxMD5/md5.h" />
+		<Unit filename="src/wxMD5/wxMD5.cpp" />
+		<Unit filename="src/wxMD5/wxMD5.h" />
+		<Unit filename="src/wxSHA1/sha1.cpp">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/wxSHA1/sha1.h" />
+		<Unit filename="src/wxSHA1/wxSHA1.cpp" />
+		<Unit filename="src/wxSHA1/wxSHA1.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
